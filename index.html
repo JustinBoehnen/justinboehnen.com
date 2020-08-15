@@ -10,14 +10,10 @@
 		}
 
 		.bgimg {
-			background-image: url('images/forest_bg.jpg');
 			height: 100%;
 			background-position: center;
 			background-size: cover;
 			position: relative;
-			color: white;
-			font-family: 'Courier New', Courier, monospace;
-			font-size: 25px;
 		}
 
 		.topleft {
@@ -32,7 +28,8 @@
 			bottom: 0;
 			left: 16px;
 			font-family: Arial, Helvetica, sans-serif;
-			text-shadow: 2px 2px 5px #000000;
+			text-shadow: 0px 0px 2px #000000;
+			color: white;
 		}
 
 		.middle {
@@ -42,26 +39,64 @@
 			transform: translate(-50%, -50%);
 			text-align: center;
 			font-family: Arial, Helvetica, sans-serif;
+			font-size: x-large;
+			text-shadow: 0px 0px 7px #000000;
+			color: white;
 		}
 
 		hr {
 			margin: auto;
 			width: 40%;
 		}
+
+		a {
+			color: #e97a2d;
+		}
+
+		canvas {
+			display: block;
+			width: 100vw;
+			height: 100vh;
+		}
+
+		#vantajs {
+			height: 100%;
+			background-position: center;
+			background-size: cover;
+			position: relative;
+		}
 	</style>
+	<head>
+		<!-- #### VANTA JS PLUGIN ### -->
+		<!-- A. vanta js assets -->
+		<script src="https://cdnjs.cloudflare.com/ajax/libs/three.js/100/three.r119.min.js"></script>
+		<script src="https://www.vantajs.com/dist/vanta.waves.min.js"></script>
+		<!-- B. Instilize vanta js by #id selector -->
+	</head>
 	<body>
-		<div class="bgimg">
-			<div class="topleft">
-				<a href="https://github.com/JustinBoehnen">
-					<img src="images/Badge_White_Filled.png" width="100" />
-				</a>
-			</div>
-			<div class="middle">
-				<h1>COMING SOON</h1>
-			</div>
-			<div class="bottomleft">
-				<p>© Justin Boehnen</p>
-			</div>
+		<div id="vantajs"></div>
+		<script>
+			VANTA.WAVES({
+				el: '#vantajs',
+				mouseControls: true,
+				touchControls: true,
+				gyroControls: false,
+				minHeight: 200.0,
+				minWidth: 200.0,
+				scale: 1.0,
+				scaleMobile: 1.0,
+			})
+		</script>
+		<div class="topleft">
+			<a href="https://github.com/JustinBoehnen">
+				<img src="images/White_Logo.png" width="100" shadow />
+			</a>
+		</div>
+		<div class="middle">
+			<h1>COMING SOON</h1>
+		</div>
+		<div class="bottomleft">
+			<p>Background by <a href="https://www.vantajs.com/">vanta.js</a></p>
 		</div>
 	</body>
 </html>
