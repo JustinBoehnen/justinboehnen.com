@@ -4,106 +4,201 @@
 <html>
 	<head>
 		<meta name="viewport" content="width=device-width, initial-scale=1.0" />
-		<style>
-			body,
-			html {
-				height: 100%;
-				margin: 0;
-			}
-
-			.bgimg {
-				height: 100%;
-				background-position: center;
-				background-size: cover;
-				position: relative;
-			}
-
-			.topleft {
-				position: absolute;
-				top: 0;
-				left: 16px;
-				top: 16px;
-			}
-
-			.bottomleft {
-				position: absolute;
-				text-align: end;
-				bottom: 0;
-				right: 16px;
-				font-family: Arial, Helvetica, sans-serif;
-				text-shadow: 0px 0px 2px #000000;
-				color: white;
-			}
-
-			.middle {
-				position: absolute;
-				top: 50%;
-				left: 50%;
-				transform: translate(-50%, -50%);
-				text-align: center;
-				font-family: Arial, Helvetica, sans-serif;
-				font-size: x-large;
-				text-shadow: 0px 0px 7px #000000;
-				color: white;
-			}
-
-			hr {
-				margin: auto;
-				width: 40%;
-			}
-
-			a {
-				color: #e97a2d;
-			}
-
-			canvas {
-				display: block;
-				width: 100vw;
-				height: 100vh;
-			}
-
-			#vantajs {
-				height: 100%;
-				background-position: center;
-				background-size: cover;
-				position: relative;
-			}
-		</style>
-		<!-- #### VANTA JS PLUGIN ### -->
-		<!-- A. vanta js assets -->
+		<link rel="stylesheet" href="style.css" />
+		<link rel="stylesheet" href="animations.css" />
+		<link rel="stylesheet" href="https://use.typekit.net/gjh6vxh.css" />
+		<script src="https://cdnjs.cloudflare.com/ajax/libs/gsap/3.5.0/gsap.min.js"></script>
+		<script src="https://cdnjs.cloudflare.com/ajax/libs/gsap/3.5.0/EasePack.min.js"></script>
+		<script src="https://cdnjs.cloudflare.com/ajax/libs/gsap/3.5.0/ScrollTrigger.min.js"></script>
+		<script src="https://cdnjs.cloudflare.com/ajax/libs/gsap/3.5.0/TextPlugin.min.js"></script>
+		<script src="CustomEase.min.js"></script>
 		<script src="three.r119.min.js"></script>
 		<script src="vanta.waves.min.js"></script>
-		<!-- B. Instilize vanta js by #id selector -->
+		<script src="vanta.fog.min.js"></script>
 	</head>
 	<body>
-		<div id="vantajs"></div>
-		<script>
-			VANTA.WAVES({
-				el: '#vantajs',
-				mouseControls: true,
-				touchControls: true,
-				gyroControls: false,
-				minHeight: 200.0,
-				minWidth: 200.0,
-				scale: 1.0,
-				scaleMobile: 1.0,
-				color: 0x0,
-				shininess: 42.0,
-				waveHeight: 16.0,
-				waveSpeed: 0.6,
-				zoom: 0.8,
-			})
-		</script>
-		<div class="topleft">
-			<a href="https://github.com/JustinBoehnen">
-				<img src="images/White_Logo.png" width="100" shadow />
-			</a>
-		</div>
-		<div class="middle">
-			<h1>COMING SOON</h1>
-		</div>
-		<div class="bottomleft">
-			<p>Background by <a href="https://www.vantajs.com/">vanta.js</a></p>
+		<div class="scroll-controller">
+			<!-- Home -->
+			<div id="vantajs-home">
+				<script>
+					VANTA.WAVES({
+						el: '#vantajs-home',
+						mouseControls: true,
+						touchControls: false,
+						gyroControls: true,
+						minHeight: 200.0,
+						minWidth: 200.0,
+						scale: 1.0,
+						scaleMobile: 1.0,
+						color: 0x0,
+						shininess: 42.0,
+						waveHeight: 16.0,
+						waveSpeed: 0.6,
+						zoom: 0.8,
+					})
+				</script>
+				<div class="flex-home-container" id="home-section">
+					<div class="flex-home-text-container">
+						<p class="flex-home-text-item">Hi, I'm Justin</p>
+						<p class="flex-home-text-item" id="flex-home-text-large">
+							A passionate developer who loves software and bringing creative ideas to life
+						</p>
+						<p class="flex-home-text-item">
+							I'm a software engineer and full-stack web developer
+						</p>
+					</div>
+				</div>
+
+				<!-- Home - Down Arrow -->
+				<element onClick="document.getElementById('projects-section').scrollIntoView()">
+					<div class="flex-home-downarrow-container">
+						<div class="flex-home-downarrow-item">
+							<p>learn more</p>
+							<svg
+								class="drop-down-arrow-svg"
+								style="width: 50px;"
+								xmlns="http://www.w3.org/2000/svg"
+								viewBox="0 0 38.49 21.36"
+							>
+								<defs></defs>
+								<g id="Layer_2" data-name="Layer 2">
+									<g id="Layer_1-2" data-name="Layer 1">
+										<polygon
+											points="19.24 21.36 0 2.12 2.12 0 19.24 17.12 36.37 0 38.49 2.12 19.24 21.36"
+										/>
+									</g>
+								</g>
+							</svg>
+						</div>
+					</div>
+				</element>
+			</div>
+
+			<!-- Projects -->
+			<div class="flex-projects-container" id="projects-section">
+				<div class="flex-project-item">
+					<img src="images/project_openchess.png" />
+					<div class="flex-project-item-info">
+						<h1>openchess</h1>
+						<p>
+							openchess is a public REST API that allows users to create, play, modify, and share games
+							that can be played on an 8x8 checkerboard.
+						</p>
+					</div>
+				</div>
+				<div class="flex-project-item">
+					<img src="http://placehold.it/300x150" />
+					<div class="flex-project-item-info">
+						<h1>Scala Matrix Math Library</h1>
+						<p>
+							A matrix library for Scala that supports various matrix operations.
+						</p>
+					</div>
+				</div>
+				<div class="flex-project-item">
+					<img src="http://placehold.it/300x150" />
+				</div>
+				<div class="flex-project-item">
+					<img src="http://placehold.it/300x150" />
+				</div>
+				<div class="flex-project-item">
+					<img src="http://placehold.it/300x150" />
+				</div>
+				<div class="flex-project-item">
+					<img src="http://placehold.it/300x150" />
+				</div>
+			</div>
+
+			<!-- About -->
+			<div class="flex-about-container" id="about-section">
+				hi
+			</div>
+
+			<!-- Contact -->
+			<div id="vantajs-contact">
+				<script>
+					VANTA.FOG({
+						el: '#vantajs-contact',
+						mouseControls: false,
+						touchControls: false,
+						gyroControls: false,
+						minHeight: 200.0,
+						minWidth: 200.0,
+						highlightColor: 0x0,
+						midtoneColor: 0xffffff,
+						lowlightColor: 0x0,
+						baseColor: 0x0,
+						blurFactor: 0.23,
+						speed: 1.8,
+						zoom: 1.3,
+					})
+				</script>
+				<div class="flex-contact-container" id="contact-section"></div>
+			</div>
+
+			<!-- Navbar -->
+			<div id="myNav" class="flex-mobile-menu-overlay">
+				<div class="menu-overlay-content">
+					<a onClick="document.getElementById('home-section').scrollIntoView(); toggleDropDownMenu()">home</a>
+					<a onClick="document.getElementById('projects-section').scrollIntoView(); toggleDropDownMenu()"
+						>projects</a
+					>
+					<a onClick="document.getElementById('about-section').scrollIntoView(); toggleDropDownMenu()"
+						>about</a
+					>
+					<a onClick="document.getElementById('contact-section').scrollIntoView(); toggleDropDownMenu()"
+						>contact</a
+					>
+				</div>
+			</div>
+
+			<div class="flex-navbar-container">
+				<img class="flex-navbar-logo-item" src="images/Logo.svg" alt="logo" />
+				<img class="flex-navbar-mobilelogo-item" src="images/Logo_Mobile2.svg" alt="logo" />
+				<element onclick="toggleDropDownMenu()" class="flex-navbar-mobilemenu-container">
+					<div class="flex-navbar-mobilemenu-item"></div>
+				</element>
+				<div class="flex-navbar-link-container">
+					<a onClick="document.getElementById('home-section').scrollIntoView()" class="flex-navbar-link-item"
+						>home</a
+					>
+					<a
+						onClick="document.getElementById('projects-section').scrollIntoView()"
+						class="flex-navbar-link-item"
+						>projects</a
+					>
+					<a onClick="document.getElementById('about-section').scrollIntoView()" class="flex-navbar-link-item"
+						>about</a
+					>
+					<a
+						onClick="document.getElementById('contact-section').scrollIntoView()"
+						class="flex-navbar-link-item"
+						>contact</a
+					>
+				</div>
+			</div>
 		</div>
 	</body>
+	<script src="brains.js"></script>
+	<script>
+		gsap.from('.flex-home-text-item', {
+			duration: 2,
+			x: -window.innerWidth,
+			opacity: 0,
+			stagger: 0.4,
+			ease: CustomEase.create('custom', 'M0,0 C0.118,0.546 0.597,1.016 0.852,1.09 1.012,1.136 1,1 1,1 '),
+		}).then(() => {
+			gsap.to('.flex-home-text-item', {
+				scrollTrigger: {
+					scroller: '.scroll-controller',
+					start: '10% top',
+					end: '10% top',
+					toggleActions: 'play none reverse none',
+				},
+				opacity: 0,
+				duration: 0.4,
+				stagger: 0.2,
+			})
+		})
+	</script>
 </html>
